@@ -3,17 +3,38 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Nullable>enable</Nullable>
+    <PackageTags>Serilog;Godot</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/YongAn404/Serilog.Sinks.Godot</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/YongAn404/Serilog.Sinks.Godot</PackageProjectUrl>
+    <Authors>YongAn404</Authors>
+    <Copyright>Copyright © YongAn404</Copyright>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="LICENSE.txt" />
+    <None Remove=".gitattributes" />
+    <None Remove=".gitignore" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="GodotSharp" Version="4.4.1" />
     <PackageReference Include="Serilog" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
