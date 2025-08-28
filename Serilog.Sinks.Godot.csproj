@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="LICENSE.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="GodotSharp" Version="4.4.1" />
     <PackageReference Include="Serilog" Version="4.3.0" />
   </ItemGroup>
