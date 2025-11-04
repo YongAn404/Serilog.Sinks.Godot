@@ -1,4 +1,6 @@
 # Serilog.Sinks.Godot
+## 安装教程
+通过NuGet安装
 ## 在Godot使用Serilog教程
 ```cs
 Log.Logger = new LoggerConfiguration()
