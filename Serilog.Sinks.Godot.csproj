@@ -1,10 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Nullable>enable</Nullable>
+	<TargetFramework>net8.0</TargetFramework>
+	<LangVersion>13.0</LangVersion>
+	<Title>$(AssemblyName)</Title>
+	<Company>$(Authors)</Company>
+	<NeutralLanguage>zh-Hans</NeutralLanguage>
+	<VersionPrefix>1.0.1</VersionPrefix>
     <PackageTags>Serilog;Godot</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/YongAn404/Serilog.Sinks.Godot</RepositoryUrl>
@@ -22,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GodotSharp" Version="4.4.1" />
+    <PackageReference Include="GodotSharp" Version="4.5.1" />
     <PackageReference Include="Serilog" Version="4.3.0" />
   </ItemGroup>
 
