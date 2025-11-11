@@ -12,11 +12,11 @@ namespace Serilog.Sinks.Godot
     public partial class GodotLogger : Logger
     {
         private const string Prefix = "Serilog|";
-        
+
         public override void _LogError(string function, string file, int line, string code, string rationale, bool editorNotify, int errorType, Array<ScriptBacktrace> scriptBacktraces)
         {
-            Log.Error($"{{{(ErrorType)errorType}}} '{file}' => {function} {line}\n" +
-                $"{(string.IsNullOrEmpty(rationale) ? $"rationale: {rationale}\n" : "")}" +
+            Log.Error($"{{{(ErrorType)errorType}}} '{(!string.IsNullOrEmpty(file)? file : "文件无法捕获")}' => {function} {line}\n" +
+                $"{(!string.IsNullOrEmpty(rationale) ? $"rationale: {rationale}\n" : "")}" +
                 $"{code}\n" +
                 $"------Backtrace------" +
                 $"{string.Join("\n", scriptBacktraces.Select((sb) => sb.Format()))}" +
