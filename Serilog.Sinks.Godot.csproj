@@ -8,7 +8,7 @@
 	<Title>$(AssemblyName)</Title>
 	<Company>$(Authors)</Company>
 	<NeutralLanguage>zh-Hans</NeutralLanguage>
-	<VersionPrefix>1.0.1</VersionPrefix>
+	<VersionPrefix>1.0.2</VersionPrefix>
     <PackageTags>Serilog;Godot</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/YongAn404/Serilog.Sinks.Godot</RepositoryUrl>
