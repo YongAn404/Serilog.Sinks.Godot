@@ -4,7 +4,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Nullable>enable</Nullable>
-	<TargetFramework>net8.0</TargetFramework>
 	<LangVersion>13.0</LangVersion>
 	<Title>$(AssemblyName)</Title>
 	<Company>$(Authors)</Company>
@@ -17,8 +16,13 @@
     <PackageProjectUrl>https://github.com/YongAn404/Serilog.Sinks.Godot</PackageProjectUrl>
     <Authors>YongAn404</Authors>
     <Copyright>Copyright © YongAn404</Copyright>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <PackageLicenseExpression>WTFPL</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <Description>在Godot使用Serilog
+Using Serilog in Godot</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,11 +31,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Godot.SourceGenerators" Version="4.5.1" />
     <PackageReference Include="GodotSharp" Version="4.5.1" />
     <PackageReference Include="Serilog" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
