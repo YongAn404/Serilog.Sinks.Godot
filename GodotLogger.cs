@@ -5,7 +5,8 @@ namespace Serilog.Sinks.Godot
 {
     public partial class GodotLogger : Logger
     {
-        public const string Prefix = "Serilog|";
+        public const string SerilogPrefix = "[Serilog] ";
+        public const string GodotPrefix = "[Godot] ";
 
         public GodotLogger(string? template = null)
         {
@@ -32,10 +33,10 @@ namespace Serilog.Sinks.Godot
 
         public override void _LogMessage(string message, bool error)
         {
-            if (message.StartsWith(Prefix) == true)
+            if (message.StartsWith(SerilogPrefix))
                 return;
 
-            message = "GODOT|" + message[..(message.Length - 1)];
+            message = GodotPrefix + message[..(message.Length - 1)];
             if (error)
             {
                 Log.Error(message);
