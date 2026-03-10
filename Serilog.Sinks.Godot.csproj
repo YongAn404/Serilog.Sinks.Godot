@@ -19,7 +19,7 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <OutputType>Library</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <PackageLicenseExpression>WTFPL</PackageLicenseExpression>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
     <Description>在Godot使用Serilog
 Using Serilog in Godot</Description>
