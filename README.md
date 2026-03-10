@@ -6,7 +6,7 @@ Serilog.Sinks.Godot 是一个专为 Godot 引擎设计的 Serilog 输出目标�
 
 - 支持在 Godot 编辑器的控制台中输出 Serilog 日志
 - 支持在游戏内置控制台（需实现 `IGameConsole` 接口）中输出日志
-- 将 GDScript 或 Godot 引擎自身的错误日志转发到 Serilog（Godot和内部特殊处理，避免递归问题）
+- 将 GDScript 或 Godot 引擎自身的错误日志和普通日志转发到 Serilog（Godot 内部特殊处理，避免递归问题）
 - 支持自定义 Godot 错误信息的输出格式
 
 ## 使用指南
