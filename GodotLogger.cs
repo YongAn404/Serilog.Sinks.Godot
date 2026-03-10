@@ -6,6 +6,15 @@ namespace Serilog.Sinks.Godot
     public partial class GodotLogger : Logger
     {
         public const string Prefix = "Serilog|";
+
+        public GodotLogger(string? template = null)
+        {
+            if (template != null)
+            {
+                GodotErrorOutputTemplate = template;
+            }
+        }
+
         public string GodotErrorOutputTemplate { get; set; } =
             "({ErrorType}:{EditorNotify}) {File}:{Function} {Line} => \"{Rationale}\"\n" +
             "{Code}\n" +
