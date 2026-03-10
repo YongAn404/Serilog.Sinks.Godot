@@ -1,27 +1,24 @@
 using Godot;
 using Godot.Collections;
-using Serilog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Serilog.Sinks.Godot
 {
     public partial class GodotLogger : Logger
     {
-        private const string Prefix = "Serilog|";
+        public const string Prefix = "Serilog|";
+        public string GodotErrorOutputTemplate { get; set; } =
+            "({ErrorType}:{EditorNotify}) {File}:{Function} {Line} => \"{Rationale}\"\n" +
+            "{Code}\n" +
+            "------Backtrace------" +
+            "{ScriptBacktraces}" +
+            "\n---------End---------\n";
 
-        public override void _LogError(string function, string file, int line, string code, string rationale, bool editorNotify, int errorType, Array<ScriptBacktrace> scriptBacktraces)
+        public override void _LogError(string function, string? file, int line, string code, string? rationale, bool editorNotify, int errorType, Array<ScriptBacktrace> scriptBacktraces)
         {
-            Log.Error($"{{{(ErrorType)errorType}}} '{(!string.IsNullOrEmpty(file)? file : "ÎÄ¼þÎÞ·¨²¶»ñ")}' => {function} {line}\n" +
-                $"{(!string.IsNullOrEmpty(rationale) ? $"rationale: {rationale}\n" : "")}" +
-                $"{code}\n" +
-                $"------Backtrace------" +
-                $"{string.Join("\n", scriptBacktraces.Select((sb) => sb.Format()))}" +
-                $"\n---------End---------\n" +
-                $"editorNotify: {editorNotify}\n");
+            file ??= "æ–‡ä»¶æ— æ³•æ•èŽ·";
+            rationale ??= "æ— è¿›ä¸€æ­¥ä¿¡æ¯";
+            string scriptBacktracesText = string.Join("\n", scriptBacktraces.Select((sb) => sb.Format()));
+            Log.Error(GodotErrorOutputTemplate, (ErrorType)errorType, editorNotify, file, function, line, rationale, code, scriptBacktracesText);
         }
 
         public override void _LogMessage(string message, bool error)

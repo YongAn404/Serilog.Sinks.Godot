@@ -4,11 +4,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Nullable>enable</Nullable>
-	<LangVersion>13.0</LangVersion>
+	<LangVersion>latest</LangVersion>
 	<Title>$(AssemblyName)</Title>
 	<Company>$(Authors)</Company>
 	<NeutralLanguage>zh-Hans</NeutralLanguage>
-	<VersionPrefix>1.0.2</VersionPrefix>
+	<VersionPrefix>1.0.3</VersionPrefix>
     <PackageTags>Serilog;Godot</PackageTags>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/YongAn404/Serilog.Sinks.Godot</RepositoryUrl>
